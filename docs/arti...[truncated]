@@ -1,0 +1,22 @@
+# MCP Gateway — Article Materials
+
+Materials for the upcoming article about building a production-ready MCP Gateway for Russian LLMs (GigaChat, YandexGPT) with 152-FZ compliance.
+
+## Status
+- ✅ Integration tests: 13/13 passed
+- ✅ 152-FZ compliance: improved to 100% (all priorities done)
+- ✅ GigaChat SSL fixed + OAuth working
+- ✅ YandexGPT: 26 models discovered and working
+- ✅ Cost savings: 86% using GigaChat vs YandexGPT
+
+## Key Materials
+- `IMPROVEMENTS_REPORT.md` — final report on PII detection improvements
+- `FINAL_REPORT.md` — project summary with full test results
+- `HABR_ARTICLE_DRAFT.md` — draft article in Russian
+- `TEST_REPORT_FOR_HABR.md` — detailed test metrics
+
+## Performance Metrics
+- GigaChat response: ~482ms
+- YandexGPT response: ~234ms
+- Anonymizer performance: <1ms per request
+- LLM fallback chain: GigaChat → YandexGPT → Ollama

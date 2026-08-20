@@ -1,0 +1,14 @@
+[Unit]
+Description=MCP Servers Health Monitor
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=simple
+User=dataguru
+ExecStart=/home/dataguru/Projects/mcp-gateway/scripts/mcp-monitor.sh
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

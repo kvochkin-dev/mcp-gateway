@@ -1,0 +1,18 @@
+MCP Gateway Test Results
+======================================================================
+
+✅ GigaChat API Key Configured: PASS (0ms) - Key length: 100 chars
+✅ YandexGPT API Key Configured: PASS (0ms) - Key length: 40 chars
+✅ Yandex Folder ID Configured: PASS (0ms) - Folder: ajepemgfdqapklq02f45...
+✅ GigaChat Health Check: PASS (138ms) - Response time: 138ms
+✅ GigaChat Models Discovery: PASS (303ms) - Found 8 models
+✅ GigaChat Chat Response: PASS (482ms) - Response: "Привет..."
+✅ YandexGPT Health Check: PASS (56ms) - Response time: 56ms
+✅ YandexGPT Models Discovery: PASS (31ms) - Found 26 models
+✅ YandexGPT Chat Response: PASS (234ms) - Response: " Hello..."
+✅ Clean Text Compliance: PASS (0ms) - is_compliant=True
+✅ PII Detection: PASS (0ms) - Found entities: 0
+✅ Text Anonymization: PASS (0ms) - Anonymized text length: 49
+✅ Text Restoration: PASS (0ms) - Restoration successful
+⚠️ GigaChat Avg Response Time: INFO (509ms) - min=371ms, max=598ms, avg=509ms
+⚠️ YandexGPT Avg Response Time: INFO (185ms) - min=176ms, max=198ms, avg=185ms

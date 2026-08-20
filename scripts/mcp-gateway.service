@@ -1,0 +1,26 @@
+#!/bin/bash
+# Systemd service for MCP Gateway
+# Usage: sudo cp mcp-gateway.service /etc/systemd/system/ && sudo systemctl daemon-reload
+
+[Unit]
+Description=MCP Gateway for Russian LLMs
+After=network.target
+
+[Service]
+Type=simple
+User=dataguru
+WorkingDirectory=/home/dataguru/Projects/mcp-gateway
+Environment=PATH=/home/dataguru/Projects/mcp-gateway/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
+ExecStart=/home/dataguru/Projects/mcp-gateway/venv/bin/python app.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=mcp-gateway
+
+# Security hardening
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

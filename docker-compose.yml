@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  mcp-gateway:
+    build: .
+    container_name: lotus-mcp-gateway
+    restart: unless-stopped
+    ports:
+      - "${MCP_PORT:-8000}:8000"
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    environment:
+      - GIGACHAT_API_KEY=${GIGACHAT_API_KEY}
+      - YANDEXGPT_API_KEY=${YANDEXGPT_API_KEY}
+      - YANDEXGPT_FOLDER_ID=${YANDEXGPT_FOLDER_ID}
+      - MCP_HOST=0.0.0.0
+      - MCP_PORT=8000
+    networks:
+      - lotus-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+networks:
+  lotus-network:
+    driver: bridge
